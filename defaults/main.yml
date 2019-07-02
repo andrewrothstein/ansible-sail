@@ -1,0 +1,14 @@
+---
+# defaults file for sail
+sail_mirror:  https://github.com/cdr/sail/releases/download
+sail_ver: v1.0.6
+sail_platform: linux-amd64
+
+sail_checksums:
+  v1.0.6:
+    # https://github.com/cdr/sail/releases/download/v1.0.6/sail-linux-amd64.tar.gz
+    linux-amd64: sha256:86299863d1be8989af0b16bc02bf69e9bf312962d683dea5d3b4768104875c27
+    # https://github.com/cdr/sail/releases/download/v1.0.6/sail-darwin-amd64.tar.gz
+    darwin-amd64: sha256:1366aa362d9bfc8c893bfdc0970a2043f3c2d8434e4dd5173f53df2ef4da2e4b
+
+sail_install_dir: /usr/local/bin

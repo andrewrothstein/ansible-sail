@@ -1,0 +1,56 @@
+---
+- name: resolve platform specific vars
+  include_vars: '{{ item }}'
+  with_first_found:
+    - files:
+        - '{{ ansible_distribution }}-{{ ansible_distribution_release }}.yml'
+        - '{{ ansible_distribution }}.yml'
+        - '{{ ansible_os_family }}.yml'
+      skip: true
+      paths:
+        - '{{ role_path }}/vars'
+- name: check for install
+  become: yes
+  stat:
+    path: '{{ sail_install_ver_dir }}'
+  changed_when: False
+  register: sail_binary
+- when: not sail_binary.stat.exists
+  block:
+    - name: download tgz
+      become: yes
+      become_user: root
+      get_url:
+        url: '{{ sail_url }}'
+        dest: /tmp/{{ sail_local_file }}
+        checksum: '{{ sail_checksum }}'
+        mode: 0644
+    - name: mkdir versioned install directory
+      become: yes
+      become_user: root
+      file:
+        path: '{{ sail_install_ver_dir }}'
+        state: directory
+        mode: 0755
+    - name: unarchive
+      become: yes
+      become_user: root
+      unarchive:
+        remote_src: yes
+        src: /tmp/{{ sail_local_file }}
+        dest: '{{ sail_install_ver_dir }}'
+        creates: '{{ sail_install_ver_dir }}/sail'
+  always:
+    - name: cleanup
+      become: yes
+      become_user: root
+      file:
+        path: /tmp/{{ sail_local_file }}
+        state: absent
+- name: link...
+  become: yes
+  become_user: root
+  file:
+    src: '{{ sail_install_ver_dir }}/sail'
+    dest: '{{ sail_install_dir }}/sail'
+    state: link

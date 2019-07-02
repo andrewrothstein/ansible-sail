@@ -1,0 +1,9 @@
+---
+# vars file for sail
+sail_remote_file: sail-{{ sail_platform }}.tar.gz
+sail_url: '{{ sail_mirror }}/{{ sail_ver }}/{{ sail_remote_file }}'
+
+sail_local_file: sail-{{ sail_platform }}-{{ sail_ver  }}.tar.gz
+
+sail_checksum: '{{ sail_checksums[sail_ver][sail_platform] }}'
+sail_install_ver_dir: '{{ sail_install_dir }}/sail-{{ sail_ver }}'
