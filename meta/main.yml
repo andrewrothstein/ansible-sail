@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  role_name: sail
   author: Andrew Rothstein
   description: installs sail.dev
   company: BlackRock Financial Management
