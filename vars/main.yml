@@ -1,5 +1,6 @@
 ---
 # vars file for sail
+sail_platform: '{{ sail_os }}-{{ sail_arch }}'
 sail_remote_file: sail-{{ sail_platform }}.tar.gz
 sail_url: '{{ sail_mirror }}/{{ sail_ver }}/{{ sail_remote_file }}'
 
