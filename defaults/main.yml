@@ -14,7 +14,7 @@ sail_checksums:
     # https://github.com/cdr/sail/releases/download/v1.0.6/sail-darwin-amd64.tar.gz
     darwin-amd64: sha256:1366aa362d9bfc8c893bfdc0970a2043f3c2d8434e4dd5173f53df2ef4da2e4b
   v1.1.0:
-    # https://github.com/cdr/sail/releases/download//v1.1.0/sail-linux-amd64.tar.gz
+    # https://github.com/cdr/sail/releases/download/v1.1.0/sail-linux-amd64.tar.gz
     linux-amd64: sha256:753cc72dabe7665e26e14415b1c08e2e11662e14d7faa09fe582898e8956afaf
-    # https://github.com/cdr/sail/releases/download//v1.1.0/sail-darwin-amd64.tar.gz
+    # https://github.com/cdr/sail/releases/download/v1.1.0/sail-darwin-amd64.tar.gz
     darwin-amd64: sha256:928a3046f8ed1417a4b2b27cfd5a6c58096f97917499f54f466b8c123f552e6a

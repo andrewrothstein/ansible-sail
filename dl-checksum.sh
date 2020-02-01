@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 DIR=~/Downloads
-MIRROR=https://github.com/cdr/sail/releases/download/$VER
+MIRROR=https://github.com/cdr/sail/releases/download
 
 dl()
 {
