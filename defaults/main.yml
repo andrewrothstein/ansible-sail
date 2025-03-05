@@ -1,6 +1,6 @@
 ---
 # defaults file for sail
-sail_mirror:  https://github.com/cdr/sail/releases/download
+sail_mirror: https://github.com/cdr/sail/releases/download
 sail_ver: v1.1.0
 sail_os: linux
 sail_arch: amd64
